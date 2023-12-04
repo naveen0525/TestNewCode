@@ -23,11 +23,11 @@ public class I_PosOrderTest extends BaseClass {
 
 	/* This test is for POS order. */
 	@Test
-	public void posOrder() throws IOException, InterruptedException {
+	public void pointOfSaleOrder() throws IOException, InterruptedException {
 		driver = setUp();
 		loginPg = new LoginPage(driver);
 		posPg = new PosPage(driver);
-		Properties prop = readPropertiesFile(".//src//Resources//Property//POS.properties");
+		Properties prop = readPropertiesFile("./src/Resources/Property/POS.properties");
 		test = report.createTest("posOrder");
 
 		loginPg.enterCredentials(prop.getProperty("loginEmail"), prop.getProperty("loginPassword"));

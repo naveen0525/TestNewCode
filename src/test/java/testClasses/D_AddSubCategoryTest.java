@@ -27,7 +27,7 @@ public class D_AddSubCategoryTest extends BaseClass {
 		driver = setUp();
 		loginPg = new LoginPage(driver);
 		AddSubCategoryPg = new AddNewSubCategoryPage(driver);
-		Properties prop = readPropertiesFile(".//src//Resources//Property//addNewSubCategory.properties");
+		Properties prop = readPropertiesFile("./src/Resources/Property/addNewSubCategory.properties");
 		test = report.createTest("addNewSubCategory");
 		
 		/* Provider's Inventory DashBoard */

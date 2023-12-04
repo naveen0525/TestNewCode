@@ -8,6 +8,7 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -26,16 +27,19 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class BaseClass implements ITestListener {
 
-	public static WebDriver driver;
+	public static ChromeDriver driver;
 	public static ExtentSparkReporter htmlReporter;
 	public static ExtentReports report;
 	protected static ExtentTest test;
 	public static ITestResult result;
 
-	public WebDriver setUp() throws IOException {
+	public ChromeDriver setUp() throws IOException {
 
-		Properties prop = readPropertiesFile(".//src//Resources//Property//url.properties");
-		System.setProperty("webdriver.chrome.driver", ".//src//Resources//drivers//chromedriver.exe");
+		Properties prop = readPropertiesFile("./src/Resources/Property/url.properties");
+
+		WebDriverManager.chromedriver().setup();
+
+//		System.setProperty("webdriver.chrome.driver", "./src/Resources/drivers/chromedriver.exe");
 
 		
 		  ChromeOptions options = new ChromeOptions();

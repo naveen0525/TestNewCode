@@ -23,12 +23,12 @@ public class L_AccountPayableApAgingTest extends BaseClass {
 
 	/* This test is to showing AP Aging. */
 	@Test
-	public void agAgingTab() throws IOException, InterruptedException {
+	public void accountPayableAgingTab() throws IOException, InterruptedException {
 
 		driver = setUp();
 		loginPg = new LoginPage(driver);
 		ApAging = new AccountPayablePageApAging(driver);
-		Properties prop = readPropertiesFile(".//src//Resources//Property//accountingPayable.properties");
+		Properties prop = readPropertiesFile("./src/Resources/Property/accountingPayable.properties");
 		test = report.createTest("agAgingTab");
 
 		loginPg.enterCredentials(prop.getProperty("loginEmail"), prop.getProperty("loginPassword"));
